@@ -1,0 +1,15 @@
+<ul class='city'>
+	<li *ngFor="let city of cities" 
+  [class.selected]="city === selectedCity" 
+  (click)="onSelect(city)">
+		<span class="badge">{{city.id}}</span>  {{city.name}}
+	</li>
+</ul>
+<div *ngIf="selectedCity">
+  <h2>
+    {{selectedCity.name | uppercase}} !!
+  </h2>
+  <h3>{{selectedCity.country}}</h3>
+  <h3>{{selectedCity.temperture}}&deg;c </h3>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
