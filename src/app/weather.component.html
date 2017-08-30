@@ -1,0 +1,15 @@
+<div *ngIf="city">
+  <h2>{{city.name}}</h2>
+  <div>
+    <label>temp: </label>{{city.main.temp}}</div>
+  <div>
+    <p>{{city.weather[0].main}}, {{city.weather[0].description}}</p>
+    <p>Sunrise: {{city.sys.sunrise * 1000 | date:'shortTime'}}</p>
+    <p>Sunset: {{city.sys.sunset * 1000 | date:'shortTime'}}</p>
+    <!-- <input [(ngModel)]="city.name" placeholder="name" /> -->
+  </div>
+  <ng2-wi>
+  <i class="wi wi-windy"></i>
+</ng2-wi>
+  <button (click)="goBack()">Back</button>
+</div>
