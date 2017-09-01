@@ -6,18 +6,18 @@ export interface Forecast {
   city: City;
 }
 
-export interface List {
+interface List {
   dt: number;
   main: Main;
   weather: Weather[];
   clouds: Clouds;
   wind: Wind;
-  snow: Snow;
+  //rain: Rain;
   sys: Sys;
   dt_txt: string;
 }
 
-export interface Main {
+interface Main {
   temp: number;
   temp_min: number;
   temp_max: number;
@@ -28,38 +28,38 @@ export interface Main {
   temp_kf: number;
 }
 
-export interface Weather {
+interface Weather {
   id: number;
   main: string;
   description: string;
   icon: string;
 }
 
-export interface Clouds {
+interface Clouds {
   all: number;
 }
 
-export interface Wind {
+interface Wind {
   speed: number;
   deg: number;
 }
 
-export interface Snow {
-  3h: number;
-}
+// interface Rain {
+//   3h: number;
+// }
 
-export interface Sys {
+interface Sys {
   pod: string;
 }
 
-export interface City {
+interface City {
   id: number;
   name: string;
   coord: Coord;
   country: string;
 }
 
-export interface Coord {
+interface Coord {
   lat: number;
   lon: number;
 }

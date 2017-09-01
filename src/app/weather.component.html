@@ -1,15 +1,22 @@
+<ul class='city'>
+  <li *ngFor="let city of cities" [class.selected]="city === selectedCity" (click)="onSelect(city)">
+    <span class="badge">{{city.country}}</span> {{city.name}}
+  </li>
+</ul>
+
 <div *ngIf="city">
-  <h2>{{city.name}}</h2>
-  <div>
-    <label>temp: </label>{{city.main.temp}}</div>
-  <div>
-    <p>{{city.weather[0].main}}, {{city.weather[0].description}}</p>
-    <p>Sunrise: {{city.sys.sunrise * 1000 | date:'shortTime'}}</p>
-    <p>Sunset: {{city.sys.sunset * 1000 | date:'shortTime'}}</p>
-    <!-- <input [(ngModel)]="city.name" placeholder="name" /> -->
+  <h2>{{city.city.name}}</h2>
+  <div *ngFor="let data of city.list" class="temperature">
+    <div>
+      <label>temp: </label>{{data.main.temp}}
+    </div>
+    <div>
+      <p>Min: {{data.main.temp_min}}, Max: {{data.main.temp_max}}</p>
+      <!-- <input [(ngModel)]="city.name" placeholder="name" /> -->
+    </div>
   </div>
-  <ng2-wi>
-  <i class="wi wi-windy"></i>
-</ng2-wi>
-  <button (click)="goBack()">Back</button>
+
+  <div>
+    <button (click)="goBack()">Back</button>
+  </div>
 </div>

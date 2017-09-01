@@ -2,13 +2,13 @@
       background-color: #CFD8DC !important;
       color: white;
     }
-    .city {
+.city {
       margin: 0 0 2em 0;
       list-style-type: none;
       padding: 0;
       width: 15em;
     }
-    .city li {
+.city li {
       cursor: pointer;
       position: relative;
       left: 0;
@@ -18,20 +18,20 @@
       height: 1.6em;
       border-radius: 4px;
     }
-    .city li.selected:hover {
+.city li.selected:hover {
       background-color: #BBD8DC !important;
       color: white;
     }
-    .city li:hover {
+.city li:hover {
       color: #607D8B;
       background-color: #DDD;
       left: .1em;
     }
-    .city .text {
+.city .text {
       position: relative;
       top: -3px;
     }
-    .city .badge {
+.city .badge {
       display: inline-block;
       font-size: small;
       color: white;
@@ -45,3 +45,15 @@
       margin-right: .8em;
       border-radius: 4px 0 0 4px;
     }
+    
+.temperature {
+  border-radius: 4px 4px 4px 4px;
+  background-color: #607D8B;
+  padding: 5px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20%;
+}
+    
+

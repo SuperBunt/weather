@@ -29,7 +29,9 @@ export class CityComponent implements OnInit {
   }
 
   onSelect(city: City): void {
-    this.selectedCity = city;
+    this.cityService.getCity(city.id).then((current) => {
+      this.selectedCity = current;
+    });
   }
 
   gotoDetail(): void {

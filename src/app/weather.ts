@@ -12,7 +12,7 @@ export interface WeatherInfo {
   id: number;
   name: string;
   cod: number;
-  icon: Blob;
+  icon: Promise<Blob>;
 }
 
 export interface Coord {

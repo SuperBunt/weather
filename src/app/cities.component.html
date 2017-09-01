@@ -1,15 +1,13 @@
 <ul class='city'>
-	<li *ngFor="let city of cities" 
-  [class.selected]="city === selectedCity" 
-  (click)="onSelect(city)">
-		<span class="badge">{{city.id}}</span>  {{city.name}}
-	</li>
+  <li *ngFor="let city of cities" [class.selected]="city === selectedCity" (click)="onSelect(city)">
+    <span class="badge">{{city.country}}</span> {{city.name}}
+  </li>
 </ul>
 <div *ngIf="selectedCity">
   <h2>
-    {{selectedCity.name | uppercase}} !!
+    {{selectedCity.name | uppercase}}
   </h2>
-  <h3>{{selectedCity.country}}</h3>
-  <h3>{{selectedCity.temperture}}&deg;c </h3>
-  <button (click)="gotoDetail()">View Details</button>
+  <h3>{{selectedCity.weather[0].main}}, {{selectedCity.weather[0].description}}</h3>
+  <h3>{{selectedCity.main.temp}}&deg;c </h3>
+  <button (click)="gotoDetail()">View Forecast</button>
 </div>

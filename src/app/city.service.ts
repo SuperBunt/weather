@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Response, URLSearchParams } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
 import { City } from './city';
+import { WeatherInfo } from './weather';
 import { CITIES } from './mock-cities';
 
 @Injectable()
 export class CityService {
+
+  constructor(private http: Http) { }
 
   getCities(): Promise<City[]> {
     return Promise.resolve(CITIES);
   }
 
   getCity(id: number): Promise<City> {
-    return this.getCities()
-               .then(city => city.find(city => city.id === id));
+    const url = `http://api.openweathermap.org/data/2.5/weather?id=${id}&units=metric&APPID=2b9f7c6eea9ae73d9b7f688d10fe973c`;
+        return this.http.get(url)
+            .toPromise()
+            .then(response => response.json() as City)
+            .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {
