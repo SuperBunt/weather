@@ -15,6 +15,7 @@ import { CityService } from './city.service';
 export class CityComponent implements OnInit {
   selectedCity: City;
   cities: City[];
+  image: string;
 
   constructor(
     private router: Router,
@@ -35,6 +36,6 @@ export class CityComponent implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/weather', this.selectedCity.id]);
+    this.router.navigate(['/forecast', this.selectedCity.id]);
   }
 }

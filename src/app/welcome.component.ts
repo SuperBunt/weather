@@ -4,15 +4,15 @@ import { City } from './city';
 import { CityService } from './city.service';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
+  selector: 'welcome',
+  templateUrl: './welcome.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class WelcomeComponent {
   title = 'My Weather App';
 
-  constructor (
-    private router: Router,
-    private cityService: CityService ) { }
+  // constructor (
+  //   private router: Router,
+  //   private cityService: CityService ) { }
 
 }

@@ -1,0 +1,8 @@
+<div class="horizontal-scroll-wrapper">
+    <div *ngFor="let data of city.list" class="forecast">
+        <strong><label>Time:</label> {{data.dt_txt | date:'medium'}}</strong><br>
+        <label>Temperature:</label> {{data.main.temp}}&deg;c<br>
+        <label>Conditions:</label> {{data.weather[0].description}}<br>
+        <label>Wind:</label> {{data.wind.speed}} mph
+    </div>
+</div>

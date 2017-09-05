@@ -1,6 +1,13 @@
-export class City {
+export interface City {
+
+  
   id: number;
   name: string;
   country: string;
-  temperture: number;
+  coord: Coord;
+}
+
+interface Coord {
+  lon: number;
+  lat: number;
 }

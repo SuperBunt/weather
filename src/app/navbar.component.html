@@ -1,0 +1,8 @@
+<nav class="navbar navbar-fixed-top navbar-default">
+    <div class="container">
+        <a class="navbar-brand" routerLink="home">Home</a>
+        <ul class="nav navbar-nav" routerLinkActive="active">
+            <li *ngFor="let city of cities" class="nav-item"><a class="nav-link" routerLink="/current/{{city.id}}">{{city.name}}</a></li>
+        </ul>
+    </div>
+</nav>

@@ -3,11 +3,3 @@
     <span class="badge">{{city.country}}</span> {{city.name}}
   </li>
 </ul>
-<div *ngIf="selectedCity">
-  <h2>
-    {{selectedCity.name | uppercase}}
-  </h2>
-  <h3>{{selectedCity.weather[0].main}}, {{selectedCity.weather[0].description}}</h3>
-  <h3>{{selectedCity.main.temp}}&deg;c </h3>
-  <button (click)="gotoDetail()">View Forecast</button>
-</div>

@@ -1,0 +1,31 @@
+<h1>Forecast</h1>
+
+<div *ngIf="city" class="container">
+  <h2>{{city.city.name}}</h2>
+  <label class="switch">
+    <input type="checkbox" (click)="showHide = !showHide">
+    <span class="slider round"></span>
+  </label>
+  <div class="onoffswitch">
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" (click)="showHide = !showHide" id="myonoffswitch"
+      checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+  </div>
+  <div class="flipswitch">
+    <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs" (click)="showHide = !showHide" checked>
+    <label class="flipswitch-label" for="fs">
+        <div class="flipswitch-inner"></div>
+        <div class="flipswitch-switch"></div>
+    </label>
+  </div>
+  <button class="filter-btn">toggle</button>
+  <forecast-slider [city]="city" *ngIf="!showHide"></forecast-slider>
+  <br>
+  <forecast-table class='filter' [city]="city" *ngIf="showHide"></forecast-table>
+</div>
+<div>
+  <button (click)="goBack()">Back</button>
+</div>

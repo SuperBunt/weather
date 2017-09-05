@@ -25,7 +25,7 @@ export class WeatherService {
 
     // http://api.openweathermap.org/data/2.5/forecast?id=5128581&units=metric&APPID=2b9f7c6eea9ae73d9b7f688d10fe973c
     getForecast(id: number): Promise<Forecast> {
-        const url = `http://api.openweathermap.org/data/2.5/forecast?id=${id}&units=metric&APPID=2b9f7c6eea9ae73d9b7f688d10fe973c`;
+        const url = `http://api.openweathermap.org/data/2.5/forecast?id=${id}&cnt=8&units=metric&APPID=2b9f7c6eea9ae73d9b7f688d10fe973c`;
         return this.http.get(url)
             .toPromise()
             .then(response => response.json() as Forecast)

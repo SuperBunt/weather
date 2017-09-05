@@ -7,13 +7,14 @@ import { WeatherInfo } from './weather';
 import { Forecast } from './forecast';
 import { WeatherService } from './weather.service';
 @Component({
-    selector: 'city-detail',
-    templateUrl: './weather.component.html',
-    styleUrls: ['./app.component.css']
+    selector: 'current-city',
+    templateUrl: './current.component.html',
+    styleUrls: ['./current.component.css'],
+
 })
-export class WeatherComponent implements OnInit {
-    city: Forecast;
-    public iconCode: string;
+export class CurrentWeatherComponent implements OnInit {
+    city: WeatherInfo;
+    image: string;
 
     constructor(
         private weatherService: WeatherService,
@@ -23,10 +24,11 @@ export class WeatherComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.paramMap // if param is a number put + before params to parse the value, the value is defined in the app-routing module
-            .switchMap((params: ParamMap) => this.weatherService.getForecast(+params.get('id')))   
-            .subscribe((city: Forecast)=> {
+            .switchMap((params: ParamMap) => this.weatherService.getWeather(+params.get('id')))
+            .subscribe((city: WeatherInfo) => {
                 this.city = city;
-                console.log(this.city.list[0].main.temp);
+                this.image = 'assets/' + city.name + '.jpg';
+                // this.getMyStyles('assets/'+city.name + '.jpg')
             });
     }
 
@@ -34,5 +36,15 @@ export class WeatherComponent implements OnInit {
         this.location.back();
     }
 
-    
+    setBackground() {
+    // console.log(city);
+    let myStyles = {
+      'background-image': 'url(assets/' + this.city.id + '.jpg)',
+      'background-repeat': 'no-repeat',
+      'background-size': 'contain',
+      'background-position': 'center'
+    };
+    return myStyles;
+  }
+
 }

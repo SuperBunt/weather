@@ -1,0 +1,7 @@
+<div *ngIf="city" class="current" [ngStyle]="setBackground()">
+  <h1> {{city.name | uppercase}} </h1>
+  <weather-detail [city] = "city"></weather-detail>
+
+  <button routerLink="/forecast/{{city.id}}">View Forecast</button>
+  <!--<img class="logo" src="assets/{{image}}" />-->
+</div>

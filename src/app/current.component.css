@@ -1,0 +1,11 @@
+.current {
+    position: relative;
+    margin: auto;
+    border: 2px solid red;
+    text-align: center;
+}
+
+h1 {
+    text-shadow: -1px -1px 1px rgba(255,255,255,0.3) ,1px 1px 1px rgba(255,255,255,0.8) ;
+}
+
